@@ -22,7 +22,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter{
 
     @Override
     public Fragment getItem(int position) {
-        return PageFragment.newInstance(position+1);//不加1会有什么效果
+        return PageFragment.newInstance(position+1);//加1是因为position是从0开始
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.noisay.dota2guide;
-
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
@@ -12,10 +13,13 @@ import com.noisay.dota2guide.adapter.SimpleFragmentPagerAdapter;
  */
 public class MainActivity extends FragmentActivity {
     private SimpleFragmentPagerAdapter pagerAdapter;
-
     private ViewPager viewPager;
-
     private TabLayout tabLayout;
+
+    @Override
+    public boolean bindService(Intent service, ServiceConnection conn, int flags) {
+        return super.bindService(service, conn, flags);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
