@@ -1,4 +1,5 @@
 package com.noisay.dota2guide;
+
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         pagerAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(), this);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(pagerAdapter);

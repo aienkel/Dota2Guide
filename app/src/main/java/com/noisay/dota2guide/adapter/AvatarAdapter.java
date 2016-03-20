@@ -19,7 +19,6 @@ import java.util.LinkedList;
 public class AvatarAdapter extends BaseAdapter {
     private LinkedList<Avatar> Avatarlist;
     private Context mContext;
-    private Avatar avatar;
 
     public AvatarAdapter(LinkedList<Avatar> Avatarlist, Context mContext) {
         this.Avatarlist = Avatarlist;
@@ -43,22 +42,22 @@ public class AvatarAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
+        AvatarViewHolder holder;
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_pick, parent, false);
-            holder = new ViewHolder();
+            holder = new AvatarViewHolder();
             holder.img_avatar = (ImageView) convertView.findViewById(R.id.avatar);
             holder.txt_name = (TextView) convertView.findViewById(R.id.name);
             convertView.setTag(holder);
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            holder = (AvatarViewHolder) convertView.getTag();
         }
         holder.img_avatar.setBackgroundResource(Avatarlist.get(position).getaId());
         holder.txt_name.setText(Avatarlist.get(position).getaName());
         return convertView;
     }
 
-    static class ViewHolder{
+    static class AvatarViewHolder{
         ImageView img_avatar;
         TextView txt_name;
     }
