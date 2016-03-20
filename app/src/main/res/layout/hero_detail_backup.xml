@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coo xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hero_detail_avatar"
+        android:layout_alignParentTop="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hero_detail_name"
+        android:layout_below="@id/hero_detail_avatar"
+        android:layout_alignParentBottom="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/hero_detail_introduction"
+        android:layout_alignParentRight="true"
+        />
+
+</coo>
