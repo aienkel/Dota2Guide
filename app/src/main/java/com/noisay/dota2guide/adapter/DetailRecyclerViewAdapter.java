@@ -39,7 +39,7 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<ItemViewHold
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         holder.imgAbility.setImageResource(mHeroDetail.get(position).gethId());
-/*        holder.heroBackground.setText(mHeroDetail.get(position).getherobackground());*/
+
         holder.nameAbility.setText(mHeroDetail.get(position).getabilityName());
         holder.introductionAbility.setText(mHeroDetail.get(position).getabilityIntroduction());
     }
@@ -52,11 +52,10 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<ItemViewHold
 
 class ItemViewHolder extends RecyclerView.ViewHolder {
     ImageView imgAbility;
-    TextView heroBackground,nameAbility, introductionAbility;
+    TextView nameAbility, introductionAbility;
     public ItemViewHolder(View view){
         super(view);
         imgAbility = (ImageView) view.findViewById(R.id.item_ability_img);
-//        heroBackground = (TextView) view.findViewById(R.id.item_background);
         nameAbility = (TextView) view.findViewById(R.id.item_ability_name);
         introductionAbility = (TextView) view.findViewById(R.id.item_ability_introduction);
 
