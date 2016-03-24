@@ -17,7 +17,7 @@ import java.util.LinkedList;
  * Created by noisa on 2016/3/15.
  */
 public class AvatarAdapter extends BaseAdapter {
-    private LinkedList<Avatar> Avatarlist;
+    private LinkedList<Avatar> Avatarlist;//头像的容器
     private Context mContext;
 
     public AvatarAdapter(LinkedList<Avatar> Avatarlist, Context mContext) {
@@ -25,6 +25,10 @@ public class AvatarAdapter extends BaseAdapter {
         this.mContext = mContext;
     }
 
+    /**改写BaseAdapter的默认方法
+     *
+     * @return
+     */
     @Override
     public int getCount() {
         return Avatarlist.size();
@@ -57,6 +61,9 @@ public class AvatarAdapter extends BaseAdapter {
         return convertView;
     }
 
+    /**View的缓存
+     *
+     */
     static class AvatarViewHolder{
         ImageView img_avatar;
         TextView txt_name;

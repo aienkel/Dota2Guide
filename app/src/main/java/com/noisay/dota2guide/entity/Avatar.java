@@ -7,8 +7,8 @@ import android.os.Parcelable;
  * Created by noisa on 2016/3/15.
  */
 public class Avatar implements Parcelable{
-    private int aId;
-    private String aName;
+    private int aId;//头像的R资源ID
+    private String aName;//英雄的中文名
 
     public Avatar(){
 
@@ -35,6 +35,10 @@ public class Avatar implements Parcelable{
         this.aName = aName;
     }
 
+    /**本类数据的序列化，传送到Fragment的GridView布局里面
+     *
+     * @return
+     */
     @Override
     public int describeContents() {
         return 0;
