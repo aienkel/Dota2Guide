@@ -16,7 +16,7 @@ import java.util.LinkedList;
 /**
  * Created by noisa on 2016/3/15.
  */
-public class AvatarAdapter extends BaseAdapter {
+public class AvatarAdapter extends BaseAdapter{
     private LinkedList<Avatar> Avatarlist;//头像的容器
     private Context mContext;
 
@@ -25,7 +25,8 @@ public class AvatarAdapter extends BaseAdapter {
         this.mContext = mContext;
     }
 
-    /**改写BaseAdapter的默认方法
+    /**
+     * 改写BaseAdapter的默认方法
      *
      * @return
      */
@@ -61,10 +62,10 @@ public class AvatarAdapter extends BaseAdapter {
         return convertView;
     }
 
-    /**View的缓存
-     *
+    /**
+     * View的缓存
      */
-    static class AvatarViewHolder{
+    static class AvatarViewHolder {
         ImageView img_avatar;
         TextView txt_name;
     }
