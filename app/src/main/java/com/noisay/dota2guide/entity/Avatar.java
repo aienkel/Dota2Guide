@@ -3,27 +3,56 @@ package com.noisay.dota2guide.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.noisay.dota2guide.util.Utils;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by noisa on 2016/3/15.
  */
 public class Avatar implements Parcelable{
-    private int aId;//头像的R资源ID
+    private String aId;//头像的R资源ID
     private String aName;//英雄的中文名
+    private String aIconPath;
+    private String detailFileName;
+
+
+    public String getDetailFileName() {
+        return detailFileName;
+    }
+
+    public String getaIconPath() {
+        return aIconPath;
+    }
+
+    public void setaIconPath(String aIconPath) {
+        this.aIconPath = aIconPath;
+    }
 
     public Avatar(){
 
     }
 
-    public Avatar(int aId, String aName) {
+    public Avatar(String aId, String aName) {
         this.aId = aId;
         this.aName = aName;
     }
 
-    public int getaId() {
+    public Avatar(String id, String name, String aIconPath) {
+        this(id, name);
+        this.aIconPath = aIconPath;
+    }
+
+    public String getaId() {
         return aId;
     }
 
-    public void setaId(int aId) {
+    public void setaId(String aId) {
         this.aId = aId;
     }
 
@@ -46,13 +75,15 @@ public class Avatar implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.aId);
+        dest.writeString(this.aId);
         dest.writeString(this.aName);
+        dest.writeString(this.aIconPath);
     }
 
     protected Avatar(Parcel in) {
-        this.aId = in.readInt();
+        this.aId = in.readString();
         this.aName = in.readString();
+        this.aIconPath = in.readString();
     }
 
     public static final Creator<Avatar> CREATOR = new Creator<Avatar>() {
@@ -66,4 +97,32 @@ public class Avatar implements Parcelable{
             return new Avatar[size];
         }
     };
+
+    // {"data":"[{"name":"","icon":"","detail_file_name":""}, {...}, {...},{...}]"}
+    public static List<Avatar> createList(String json) {
+        try {
+            JSONObject rootJson = new JSONObject(json);
+
+            if (rootJson.has("data")) {
+                JSONArray avatarStr = rootJson.getJSONArray("data");
+                if (avatarStr != null) {
+                    List<Avatar> avatarlist = new ArrayList<Avatar>();
+
+                    for (int i = 0; i < avatarStr.length(); i++) {
+                        JSONObject curJson = (JSONObject)avatarStr.get(i);
+                        Avatar avatar = new Avatar();
+                        avatar.aIconPath = Utils.getSafeJsonField(curJson, "icon");
+                        avatar.aName = Utils.getSafeJsonField(curJson, "name");
+                        avatar.detailFileName = Utils.getSafeJsonField(curJson, "detail_file_name");
+                        avatarlist.add(avatar);
+                    }
+
+                    return avatarlist;
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

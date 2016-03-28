@@ -2,13 +2,16 @@ package com.noisay.dota2guide.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.noisay.dota2guide.R;
-import com.noisay.dota2guide.entity.HeroDetail;
+import com.noisay.dota2guide.entity.HeroAbility;
+import com.noisay.dota2guide.util.Utils;
 
 import java.util.List;
 
@@ -18,9 +21,9 @@ import java.util.List;
 public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     private LayoutInflater mInflater;
     private Context mContext;
-    private List<HeroDetail> mHeroDetail;
+    private List<HeroAbility> mHeroDetail;
 
-    public DetailRecyclerViewAdapter(Context context, List<HeroDetail> mHeroDetail) {
+    public DetailRecyclerViewAdapter(Context context, List<HeroAbility> mHeroDetail) {
         this.mContext = context;
         this.mHeroDetail=mHeroDetail;
         mInflater = LayoutInflater.from(context);
@@ -38,14 +41,20 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<ItemViewHold
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
-        holder.imgAbility.setImageResource(mHeroDetail.get(position).gethId());
+        try {
+            holder.nameAbility.setText(mHeroDetail.get(position).chName);
+//            holder.introductionAbility.setText(mHeroDetail.get(position).affects+mHeroDetail.get(position).desc+mHeroDetail.get(position).dmg+mHeroDetail.get(position).notes+mHeroDetail.get(position).attribute+mHeroDetail.get(position).lore);
+            holder.introductionAbility.setText(Html.fromHtml(mHeroDetail.get(position).affects+"\n"+mHeroDetail.get(position).desc+"\n"+mHeroDetail.get(position).dmg+"\n"+mHeroDetail.get(position).notes+"\n"+mHeroDetail.get(position).attribute+"\n"+mHeroDetail.get(position).lore));
+            holder.imgAbility.setImageBitmap(Utils.createBitmapFromFile(mContext, "ability_image/" + mHeroDetail.get(position).keyName + "_hp1.jpg"));
+        } finally {
+            //TODO:
+        }
 
-        holder.nameAbility.setText(mHeroDetail.get(position).getabilityName());
-        holder.introductionAbility.setText(mHeroDetail.get(position).getabilityIntroduction());
     }
 
     @Override
     public int getItemCount() {
+//        return mHeroDetail.size();
         return mHeroDetail.size();
     }
 }

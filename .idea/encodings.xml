@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/abaddon_aphotic_shield_hp1.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/abaddon_borrowed_time_hp1.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/abaddon_death_coil_hp1.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/abaddon_frostmourne_hp1.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/abaddon_full.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/abaddon_icon.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/alchemist_full.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ancient_apparition_full.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/antimage_full.jpg" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/arc_warden_full.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/assets/antimage_full.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/assets/heroDetailJson/hero-abaddon.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/assets/heroDetailJson/hero-alchemist.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/assets/heroDetailJson/hero-ancient_apparition.json" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
