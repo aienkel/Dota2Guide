@@ -32,6 +32,8 @@ DOTA2中英雄资料查看软件，所有数据离线存储，无联网权限，
 
 For a Android project,I recommand Android Studio 1.5 Edition to build.
 
+[Dota2Guide开发手记](http://www.jianshu.com/notebooks/3579252/latest)
+
 #### Open source projects 
 
 **[Android-support-v7-appcompat](https://developer.android.com/intl/zh-cn/tools/support-library/index.html)**
