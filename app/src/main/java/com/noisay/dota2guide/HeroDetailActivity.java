@@ -10,8 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
+import com.ms.square.android.expandabletextview.ExpandableTextView;
 import com.noisay.dota2guide.adapter.DetailRecyclerViewAdapter;
 import com.noisay.dota2guide.entity.Avatar;
 import com.noisay.dota2guide.entity.HeroAbility;
@@ -24,7 +24,6 @@ import com.noisay.dota2guide.util.Utils;
  */
 public class HeroDetailActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-//    public ArrayList<HeroDetail> mHeroDetail;//实体类HeroDetail的容器
     private DetailRecyclerViewAdapter mDetailRecyclerViewAdapter;//RecclerView的Adapter
 
     /**改写AppCompatActivity的默认方法
@@ -53,27 +52,22 @@ public class HeroDetailActivity extends AppCompatActivity {
         //通过CollapsingToolbarLayout修改字体颜色
         mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);//设置还没收缩时状态下字体颜色
         mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);//设置收缩后Toolbar上字体的颜色
-//        initDatas();//初始化英雄数据
         initViews();//初始化View
-        //设置布局管理器
+        //接受PageFragment传过来的参数
         String fileName = getIntent().getStringExtra("file_name");
         HeroDetail detail = getHeroDetail(fileName);
-
-
-
-
-
-
+        /**用第三方类库ExpandableTextView设置英雄背景文字的收缩扩展
+         *
+         */
+        ExpandableTextView herobackground = (ExpandableTextView) findViewById(R.id.expand_text_view);
+        herobackground.setText(detail.bio_l);
+        //设置布局管理器
         mDetailRecyclerViewAdapter = new DetailRecyclerViewAdapter(this, detail.ability);
         mRecyclerView.setAdapter(mDetailRecyclerViewAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         //设置RecyclerView的Item的分割线
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, linearLayoutManager.getOrientation()));
-        TextView herobackgroud = (TextView) findViewById(R.id.hero_backgroud);
-        herobackgroud.setText(detail.bio_l);
-
-
     }
 
     private HeroDetail getHeroDetail(String fileName) {

@@ -14,12 +14,13 @@ import java.util.List;
 
 /**
  * Created by noisa on 2016/3/15.
+ * Avatar的实体类
  */
 public class Avatar implements Parcelable{
-    private String aId;//头像的R资源ID
+    private String aId;//无
     private String aName;//英雄的中文名
-    private String aIconPath;
-    private String detailFileName;
+    private String aIconPath;//头像的路径
+    private String detailFileName;//英雄详情的Json文件路径
 
 
     public String getDetailFileName() {
@@ -98,7 +99,7 @@ public class Avatar implements Parcelable{
         }
     };
 
-    // {"data":"[{"name":"","icon":"","detail_file_name":""}, {...}, {...},{...}]"}
+    // {"data":"[{"name":"","icon":"","detail_file_name":""}, {...}, {...},{...}]"} 英雄列表的Json格式设计
     public static List<Avatar> createList(String json) {
         try {
             JSONObject rootJson = new JSONObject(json);

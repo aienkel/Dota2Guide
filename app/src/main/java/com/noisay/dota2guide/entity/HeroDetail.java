@@ -13,12 +13,13 @@ import java.util.List;
 
 /**
  * Created by noisa on 2016/3/26.
+ * HeroDetail实体类
  */
 public class HeroDetail {
 
-    public String bio_l;
+    public String bio_l;//英雄背景故事，不在RecyclerView中，单独写
 
-    public List<HeroAbility> ability;
+    public List<HeroAbility> ability;//容器
 
     public HeroDetail() {
 
@@ -36,11 +37,11 @@ public class HeroDetail {
             heroDetail.bio_l = Utils.getSafeJsonField(rootJson, "bio_l");
 
             if (rootJson.has(HeroAbility.HEREO_FIELD_KEY)) {
-                JSONArray bilityStr = rootJson.getJSONArray(HeroAbility.HEREO_FIELD_KEY);
-                if (bilityStr != null) {
+                JSONArray abilityStr = rootJson.getJSONArray(HeroAbility.HEREO_FIELD_KEY);
+                if (abilityStr != null) {
                     List<HeroAbility> abilities = new ArrayList<HeroAbility>();
-                    for (int i=0; i<bilityStr.length(); i++) {
-                        abilities.add(HeroAbility.create(bilityStr.getString(i)));
+                    for (int i=0; i<abilityStr.length(); i++) {
+                        abilities.add(HeroAbility.create(abilityStr.getString(i)));
                     }
 
                     heroDetail.ability = abilities;

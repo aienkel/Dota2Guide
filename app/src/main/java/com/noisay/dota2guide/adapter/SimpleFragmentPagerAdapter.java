@@ -10,7 +10,7 @@ import java.util.List;
  * Created by noisa on 2016/3/14.
  */
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter{
-    private String tabTitles[] = new String[]{"敏捷英雄", "智力英雄", "力量英雄", "装备"};//tab标题
+    private String tabTitles[] = new String[]{"力量英雄", "敏捷英雄", "智力英雄", "装备"};//tab标题
     private List<Fragment> fragmentList;//Fragment容器
     public SimpleFragmentPagerAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);

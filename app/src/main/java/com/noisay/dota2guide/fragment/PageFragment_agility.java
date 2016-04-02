@@ -62,12 +62,6 @@ public class PageFragment_agility extends Fragment {
 
     /**    初始化英雄头像，名字的方法*/
     private void initdata() {
-        Avatarlist = Avatar.createList(Utils.getFileContent(getContext(), "agility_hero_List"));
-
-//        Log.d("test", "sd path:" + Utils.DATA_ROOT_DIR);
-
-//        Utils.createJsonFile2(getContext(), "hero_list.json", Utils.createHeroJsonList(Avatarlist));
-//        Utils.createJsonFile(Utils.DATA_ROOT_DIR+"/hero_data/", "hero_list.json" ,Utils.createHeroJsonList(Avatarlist));
-
+        Avatarlist = Avatar.createList(Utils.getFileContent(getContext(), "agility_hero_List"));//加载敏捷英雄列表Json
     }
 }

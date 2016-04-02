@@ -29,6 +29,12 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<ItemViewHold
         mInflater = LayoutInflater.from(context);
     }
 
+    /**改写RecyclerViewAdapter的默认方法
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -42,10 +48,12 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<ItemViewHold
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         try {
-            holder.nameAbility.setText(mHeroDetail.get(position).chName);
-//            holder.introductionAbility.setText(mHeroDetail.get(position).affects+mHeroDetail.get(position).desc+mHeroDetail.get(position).dmg+mHeroDetail.get(position).notes+mHeroDetail.get(position).attribute+mHeroDetail.get(position).lore);
-            holder.introductionAbility.setText(Html.fromHtml(mHeroDetail.get(position).affects+"\n"+mHeroDetail.get(position).desc+"\n"+mHeroDetail.get(position).dmg+"\n"+mHeroDetail.get(position).notes+"\n"+mHeroDetail.get(position).attribute+"\n"+mHeroDetail.get(position).lore));
-            holder.imgAbility.setImageBitmap(Utils.createBitmapFromFile(mContext, "ability_image/" + mHeroDetail.get(position).keyName + "_hp1.jpg"));
+            holder.nameAbility.setText(mHeroDetail.get(position).chName);//英雄技能的名字
+            holder.introductionAbility.setText(Html.fromHtml(mHeroDetail.get(position).affects + "\n" +
+                    mHeroDetail.get(position).desc + "\n" + mHeroDetail.get(position).dmg + "\n" + mHeroDetail.get(position).notes +
+                    "\n" + mHeroDetail.get(position).attribute + "\n" + mHeroDetail.get(position).lore));//英雄技能的各项属性
+            holder.imgAbility.setImageBitmap(Utils.createBitmapFromFile(mContext, "ability_image/" + mHeroDetail.get(position).keyName + "_hp1.jpg"));//英雄技能的图标
+
         } finally {
             //TODO:
         }
@@ -54,7 +62,6 @@ public class DetailRecyclerViewAdapter extends RecyclerView.Adapter<ItemViewHold
 
     @Override
     public int getItemCount() {
-//        return mHeroDetail.size();
         return mHeroDetail.size();
     }
 }

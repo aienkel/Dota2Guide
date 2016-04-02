@@ -11,10 +11,5 @@
         android:numColumns="3"
         android:gravity="fill_horizontal"
         android:verticalSpacing="@dimen/gridview_spacing"
-        android:horizontalSpacing="@dimen/gridview_spacing"
-        />
-<!--    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center" />-->
+        android:horizontalSpacing="@dimen/gridview_spacing"/>
 </FrameLayout>

@@ -4,28 +4,33 @@
     android:layout_height="wrap_content"
     android:background="@color/fragment_background"
     android:layout_margin="1dp">
-
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_ability_name_layout">
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
         android:id="@+id/item_ability_img"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/item_ability_name"
         android:layout_below="@id/item_ability_img"
-
+        android:layout_centerHorizontal="true"
         android:textSize="12sp"
         android:textColor="@color/text_enabled"
         />
+</RelativeLayout>
     <TextView
         android:id="@+id/item_ability_introduction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/item_ability_img"
+        android:layout_toRightOf="@id/item_ability_name_layout"
+        android:layout_marginLeft="10dp"
         android:textSize="14sp"
         android:textColor="@color/text_disabled"/>
 </RelativeLayout>

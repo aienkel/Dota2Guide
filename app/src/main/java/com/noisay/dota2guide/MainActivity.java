@@ -34,12 +34,15 @@ public class MainActivity extends FragmentActivity {
         PageFragment_agility pageFragment_agility = new PageFragment_agility();//创建一个Fragment实体
         PageFragment_intelligence pageFragment_intelligence= new PageFragment_intelligence();//创建一个Fragment实体
         PageFragment_strength pageFragment_strength = new PageFragment_strength();
-//        PageFragment_item pageFragment_item = new PageFragment_item();
+        //物品栏暂时不做
+        //PageFragment_item pageFragment_item = new PageFragment_item();
         List<Fragment> fragmentList = new ArrayList<Fragment>();//创建一个储存Fragment实体的容器
+        fragmentList.add(pageFragment_strength);
         fragmentList.add(pageFragment_agility);
         fragmentList.add(pageFragment_intelligence);
-        fragmentList.add(pageFragment_strength);
-//        fragmentList.add(pageFragment_item);
+
+        //物品栏暂时不做
+        //fragmentList.add(pageFragment_item);
 
         pagerAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(), fragmentList);//创建一个pagerAdapter，其中参数fragmentList使其和各Fragment动态关联
         viewPager = (ViewPager) findViewById(R.id.viewpager);
