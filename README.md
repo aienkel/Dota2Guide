@@ -12,11 +12,11 @@ DOTA2中英雄资料查看软件，所有数据离线存储，无联网权限，
 
 #### Screenshot
 
-![one](https://github.com/noisay/Dota2Guide/tree/master/Gif/1.gif)
+![one](https://raw.githubusercontent.com/noisay/Dota2Guide/tree/master/Gif/1.gif)
 
-![one](https://github.com/noisay/Dota2Guide/tree/master/Gif/2.gif)
+![two](https://raw.githubusercontent.com/noisay/Dota2Guide/tree/master/Gif/2.gif)
 
-![one](https://github.com/noisay/Dota2Guide/tree/master/Gif/3.gif)
+![three](https://raw.githubusercontent.com/noisay/Dota2Guide/tree/master/Gif/3.gif)
 
 #### Feature
 
